@@ -1,4 +1,5 @@
 """Datatypes."""
+# pylint: disable=invalid-name,too-many-instance-attributes
 
 from dataclasses import dataclass
 from typing import List, Optional
@@ -6,12 +7,16 @@ from typing import List, Optional
 
 @dataclass
 class QuestionCount:
+    """QuestionCount."""
+
     difficulty: str
     count: int
 
 
 @dataclass
 class Contributions:
+    """Contributions."""
+
     points: int
     questionCount: int
     testcaseCount: int
@@ -19,6 +24,8 @@ class Contributions:
 
 @dataclass
 class Profile:
+    """Profile."""
+
     realName: str
     websites: List[str]
     countryName: str
@@ -34,6 +41,8 @@ class Profile:
 
 @dataclass
 class SubmissionCount:
+    """SubmissionCount."""
+
     difficulty: str
     count: int
     submissions: int
@@ -41,12 +50,16 @@ class SubmissionCount:
 
 @dataclass
 class SubmitStats:
+    """SubmitStats."""
+
     acSubmissionNum: List[SubmissionCount]
     totalSubmissionNum: List[SubmissionCount]
 
 
 @dataclass
 class MatchedUser:
+    """MatchedUser."""
+
     username: str
     githubUrl: str
     contributions: Contributions

@@ -2,8 +2,6 @@
 
 import json
 from dataclasses import asdict
-from multiprocessing.sharedctypes import Value
-from textwrap import indent
 
 import dacite
 import requests
@@ -13,6 +11,7 @@ from .types import LeetCodeData
 
 def get_user_stats(username: str) -> LeetCodeData:
     """Get user stats."""
+    # pylint: disable=line-too-long
     response = requests.get(
         "https://leetcode.com/graphql",
         json={
@@ -23,13 +22,10 @@ def get_user_stats(username: str) -> LeetCodeData:
     )
     if response.ok:
         return dacite.from_dict(LeetCodeData, response.json()["data"])
-    else:
-        raise ValueError(
-            "Problem with the request %s, '%s'" % (response, response.content.decode())
-        )
+    raise ValueError(f"Problem with the request {response}, '{response.content.decode()}'")
 
 
 if __name__ == "__main__":
     data = get_user_stats("MarcoBoucas")
-    with open("test.json", "w") as file:
+    with open("test.json", "w", encoding="utf-8") as file:
         json.dump(asdict(data), file, indent=2)

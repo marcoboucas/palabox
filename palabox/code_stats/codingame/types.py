@@ -1,4 +1,5 @@
 """Datatypes."""
+# pylint: disable=invalid-name,too-many-instance-attributes
 
 from dataclasses import dataclass
 from typing import List
@@ -6,12 +7,16 @@ from typing import List
 
 @dataclass
 class FormValues:
+    """FormValues."""
+
     city: str
     school: str
 
 
 @dataclass
 class CodinGamer:
+    """CodinGamer."""
+
     userId: int
     pseudo: str
     countryId: str
@@ -28,6 +33,8 @@ class CodinGamer:
 
 @dataclass
 class RankHistorics:
+    """RankHistorics."""
+
     ranks: List[int]
     totals: List[int]
     points: List[int]
@@ -41,6 +48,8 @@ class RankHistorics:
 
 @dataclass
 class CodingamePointsRankingDto:
+    """CodingamePointsRankingDto."""
+
     codingamePointsTotal: int
     codingamePointsRank: int
     codingamePointsContests: int
@@ -57,6 +66,8 @@ class CodingamePointsRankingDto:
 
 @dataclass
 class CodinGameStats:
+    """CodinGameStats."""
+
     codingamerPoints: int
     achievementCount: int
     codingamer: CodinGamer

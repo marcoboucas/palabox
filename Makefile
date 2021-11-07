@@ -16,12 +16,17 @@ install-dev: install
 clean:
 	rm -r test.* test2.* build dist ./**/palabox.egg-info
 
+clean-package:
+	rm -r build dist ./**/palabox.egg-info &
 
-package:
+package: clean-package
 	python setup.py sdist bdist_wheel
 
 ship-test:
 	python -m twine upload --repository testpypi dist/*
+
+ship:
+	python -m twine upload dist/*
 
 coverage:
 	pytest --cov=palabox --cov-report=html tests/

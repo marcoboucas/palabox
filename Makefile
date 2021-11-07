@@ -11,3 +11,14 @@ install:
 	pip install -r requirements.txt
 install-dev: install
 	pip install -r requirements-dev.txt
+
+
+clean:
+	rm -r test.* test2.* build dist ./**/palabox.egg-info
+
+
+package:
+	python setup.py sdist bdist_wheel
+
+ship-test:
+	python -m twine upload --repository testpypi dist/*

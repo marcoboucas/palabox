@@ -8,3 +8,8 @@ __pycache__
 test*.txt
 test.py
 test.json
+
+
+build
+dist
+*.egg-info

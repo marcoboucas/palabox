@@ -22,3 +22,7 @@ package:
 
 ship-test:
 	python -m twine upload --repository testpypi dist/*
+
+coverage:
+	pytest --cov=palabox --cov-report=html tests/
+	cd htmlcov && start "http://localhost:8000" && python -m http.server

@@ -6,7 +6,7 @@ from dataclasses import asdict
 import dacite
 import requests
 
-from .types import CodinGameStats
+from palabox.code_stats.codingame.types import CodinGameStats
 
 
 def get_user_stats(userid: str) -> CodinGameStats:

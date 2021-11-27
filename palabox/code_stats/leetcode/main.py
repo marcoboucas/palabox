@@ -21,7 +21,8 @@ def get_user_stats(username: str) -> LeetCodeData:
         },
     )
     if response.ok:
-        return dacite.from_dict(LeetCodeData, response.json()["data"])
+        data: LeetCodeData = dacite.from_dict(LeetCodeData, response.json()["data"])
+        return data
     raise ValueError(f"Problem with the request {response}, '{response.content.decode()}'")
 
 

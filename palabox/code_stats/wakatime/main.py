@@ -17,13 +17,14 @@ def get_user_stats(token: str) -> WakatimeStats:
         f"https://wakatime.com/share/{token}.json",
     )
     if response.ok:
-        return dacite.from_dict(
+        data: WakatimeStats = dacite.from_dict(
             WakatimeStats,
             response.json(),
             dacite.Config(
                 {datetime: lambda dateStr: datetime.strptime(dateStr, "%Y-%m-%dT%H:%M:%S%z")}
             ),
         )
+        return data
 
     raise ValueError(f"Problem with the request {response}, '{response.content.decode()}'")
 

@@ -16,7 +16,8 @@ def get_user_stats(userid: str) -> CodinGameStats:
         json=[userid],
     )
     if response.ok:
-        return dacite.from_dict(CodinGameStats, response.json())
+        data: CodinGameStats = dacite.from_dict(CodinGameStats, response.json())
+        return data
 
     raise ValueError(f"Problem with the request {response}, '{response.content.decode()}'")
 

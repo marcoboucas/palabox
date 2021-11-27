@@ -2,12 +2,15 @@
 
 import setuptools
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
+with open("README.md", "r", encoding="utf-8") as file:
+    long_description = file.read()
+
+with open("requirements.txt", "r", encoding="utf-8") as file:
+    requirements = file.read().split("\n")
 
 setuptools.setup(
     name="palabox",  # This is the name of the package
-    version="0.0.2",  # The initial release version
+    version="0.0.3",  # The initial release version
     author="Marco Boucas",  # Full name of the author
     url="https://github.com/marcoboucas/palabox",
     description="Toolbox of useful functions, with focus on Text Analysis and Stats",
@@ -23,5 +26,5 @@ setuptools.setup(
     ],  # Information to filter the project on PyPi website
     python_requires=">=3.6",  # Minimum version requirement of the package
     py_modules=["palabox"],  # Name of the python package
-    install_requires=[],  # Install other dependencies if any
+    install_requires=requirements,  # Install other dependencies if any
 )

@@ -20,12 +20,14 @@ clean-package:
 	rm -r build dist ./**/palabox.egg-info &
 
 package: clean-package
+	pip install wheel
 	python setup.py sdist bdist_wheel
 
 ship-test:
 	python -m twine upload --repository testpypi dist/*
 
 ship:
+	pip install twine
 	python -m twine upload dist/*
 
 coverage:

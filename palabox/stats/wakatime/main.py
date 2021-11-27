@@ -7,7 +7,7 @@ from datetime import datetime
 import dacite
 import requests
 
-from palabox.code_stats.wakatime.types import WakatimeStats
+from palabox.stats.wakatime.types import WakatimeStats
 from palabox.utils import json_converter
 
 

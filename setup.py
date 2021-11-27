@@ -10,7 +10,7 @@ with open("requirements.txt", "r", encoding="utf-8") as file:
 
 setuptools.setup(
     name="palabox",  # This is the name of the package
-    version="0.0.4",  # The initial release version
+    version="0.0.5",  # The initial release version
     author="Marco Boucas",  # Full name of the author
     url="https://github.com/marcoboucas/palabox",
     description="Toolbox of useful functions, with focus on Text Analysis and Stats",

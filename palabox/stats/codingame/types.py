@@ -2,7 +2,7 @@
 # pylint: disable=invalid-name,too-many-instance-attributes
 
 from dataclasses import dataclass
-from typing import List
+from typing import List, Optional
 
 
 @dataclass
@@ -23,12 +23,12 @@ class CodinGamer:
     publicHandle: str
     schoolId: int
     rank: int
-    onlineSince: int
     formValues: FormValues
     city: str
     level: int
     xp: int
     category: str
+    onlineSince: Optional[int] = None
 
 
 @dataclass

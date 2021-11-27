@@ -6,7 +6,7 @@ from dataclasses import asdict
 import dacite
 import requests
 
-from palabox.code_stats.leetcode.types import LeetCodeData
+from palabox.stats.leetcode.types import LeetCodeData
 
 
 def get_user_stats(username: str) -> LeetCodeData:

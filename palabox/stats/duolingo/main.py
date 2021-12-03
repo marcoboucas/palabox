@@ -68,9 +68,3 @@ def get_user_stats(username: str, password: str) -> DuolingoStats:
         return data
 
     raise ValueError(f"Problem with the request {response}, '{response.content.decode()}'")
-
-
-if __name__ == "__main__":
-    DUOLINGO_USERNAME = "Palad0rn"
-    DUOLINGO_PASSWORD = "NX5taqn8?L&XxU9V"
-    get_user_stats(DUOLINGO_USERNAME, DUOLINGO_PASSWORD)

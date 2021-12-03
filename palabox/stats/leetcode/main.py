@@ -27,6 +27,6 @@ def get_user_stats(username: str) -> LeetCodeData:
 
 
 if __name__ == "__main__":
-    data = get_user_stats("MarcoBoucas")
+    _data = get_user_stats("MarcoBoucas")
     with open("test.json", "w", encoding="utf-8") as file:
-        json.dump(asdict(data), file, indent=2)
+        json.dump(asdict(_data), file, indent=2)

@@ -1,7 +1,7 @@
 """Datatypes."""
-# pylint: disable=invalid-name,too-many-instance-attributes
+# pylint: disable=invalid-name,too-many-instance-attributes,missing-class-docstring
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import List, Optional
 
 

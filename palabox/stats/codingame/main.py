@@ -23,6 +23,6 @@ def get_user_stats(userid: str) -> CodinGameStats:
 
 
 if __name__ == "__main__":
-    data = get_user_stats("8c4c1d3cf92a07fd755428fbc86744fc2575773")
+    _data = get_user_stats("8c4c1d3cf92a07fd755428fbc86744fc2575773")
     with open("test.json", "w", encoding="utf-8") as file:
-        json.dump(asdict(data), file, indent=2)
+        json.dump(asdict(_data), file, indent=2)

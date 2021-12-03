@@ -36,7 +36,10 @@ def login_duolingo(login: str, password: str) -> Tuple[str, str]:
         url="https://www.duolingo.com/login",
         data={"login": login, "password": password},
     )
-    return request.json()["user_id"], request.headers["jwt"]
+    try:
+        return request.json()["user_id"], request.headers["jwt"]
+    except KeyError as origin_exception:
+        raise ValueError("Password or login incorrect") from origin_exception
 
 
 def generate_url(user_id: str) -> str:

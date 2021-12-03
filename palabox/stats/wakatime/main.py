@@ -30,8 +30,8 @@ def get_user_stats(token: str) -> WakatimeStats:
 
 
 if __name__ == "__main__":
-    data = get_user_stats(
+    _data = get_user_stats(
         "@5fba56dd-c3e1-4bec-9596-fd1565702df9/b026f6b2-5e5f-4a7e-8d1b-8039ee9a6aa6"
     )
     with open("test.json", "w", encoding="utf-8") as file:
-        json.dump(asdict(data), file, indent=2, default=json_converter)
+        json.dump(asdict(_data), file, indent=2, default=json_converter)

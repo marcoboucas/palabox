@@ -54,9 +54,23 @@ def get_user_stats(username: str, password: str) -> DuolingoStats:
     """Get user stats."""
     user_id, jwt_token = login_duolingo(username, password)
     url = generate_url(user_id)
+    friends_response = make_duolingo_request(
+        "https://www.duolingo.com/2017-06-30/users/"
+        + f"{user_id}/subscriptions?pageSize=500&_={user_id}",
+        jwt=jwt_token,
+    )
     response = make_duolingo_request(url, jwt=jwt_token)
     if response.ok:
-        data: DuolingoStats = dacite.from_dict(DuolingoStats, response.json())
+        raw_data = response.json()
+        raw_data["friends"] = friends_response.json()["subscriptions"]
+        data: DuolingoStats = dacite.from_dict(DuolingoStats, raw_data)
+
         return data
 
     raise ValueError(f"Problem with the request {response}, '{response.content.decode()}'")
+
+
+if __name__ == "__main__":
+    DUOLINGO_USERNAME = "Palad0rn"
+    DUOLINGO_PASSWORD = "NX5taqn8?L&XxU9V"
+    get_user_stats(DUOLINGO_USERNAME, DUOLINGO_PASSWORD)

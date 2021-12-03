@@ -87,6 +87,20 @@ class CurrentCourse:
 
 
 @dataclass
+class Friend:
+    """One friend."""
+
+    username: str
+    picture: str
+    name: str
+    monthlyXp: int
+    weeklyXp: int
+    totalXp: int
+    id: int
+    hasPlus: bool
+
+
+@dataclass
 class DuolingoStats:
     """FormValues."""
 
@@ -106,3 +120,4 @@ class DuolingoStats:
     email: str
     username: str
     currentCourse: CurrentCourse
+    friends: List[Friend]

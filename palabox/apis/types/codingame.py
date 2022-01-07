@@ -61,12 +61,12 @@ class CodingamePointsRankingDto:
     codingamePointsClash: int
     numberCodingamers: int
     numberCodingamersGlobal: int
-    rankHistorics: RankHistorics
+    # rankHistorics: RankHistorics
 
 
 @dataclass
-class CodinGameStats:
-    """CodinGameStats."""
+class CodingameStats:
+    """CodingameStats."""
 
     codingamerPoints: int
     achievementCount: int

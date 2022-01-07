@@ -26,7 +26,7 @@ class Range:
 
 
 @dataclass
-class RangeStats:
+class WakatimeDay:
     """Stats for one range of data."""
 
     grand_total: GrandTotal
@@ -37,4 +37,4 @@ class RangeStats:
 class WakatimeStats:
     """Wakatime stats."""
 
-    data: List[RangeStats]
+    data: List[WakatimeDay]
